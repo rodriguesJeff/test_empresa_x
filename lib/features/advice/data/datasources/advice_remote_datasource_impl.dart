@@ -14,11 +14,12 @@ class AdviceRemoteDataSourceImpl implements AdviceRemoteDataSource {
   @override
   Future<Advice>? getAdvice() async {
     final response = await client.get(
-      Uri.https('https://api.adviceslip.com/advice'),
+      Uri.parse('https://api.adviceslip.com/advice'),
       headers: {'Content-Type': 'application/json'},
     );
     if (response.statusCode == 200) {
-      return AdviceModel.fromJson(json.decode(response.body));
+      final jsonMap = json.decode(response.body);
+      return AdviceModel.fromJson(jsonMap['slip']);
     } else {
       throw ServerException();
     }
