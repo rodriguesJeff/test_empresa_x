@@ -21,7 +21,7 @@ void main() {
   test('Deve retornar um conselho a partir do repositorio', () async {
     when(repository.getAdvice()).thenAnswer((_) async => const Right(advice));
 
-    final result = await usecase.execute();
+    final result = await usecase();
 
     expect(result, const Right(advice));
     verify(repository.getAdvice());

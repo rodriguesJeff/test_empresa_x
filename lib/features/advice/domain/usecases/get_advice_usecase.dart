@@ -9,7 +9,7 @@ class GetAdvice {
 
   GetAdvice(this.repository);
 
-  Future<Either<Failure, Advice?>?> execute() async {
+  Future<Either<Failure, Advice?>?>? call() async {
     return await repository.getAdvice();
   }
 }
