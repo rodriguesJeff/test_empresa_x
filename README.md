@@ -1,16 +1,25 @@
-# teste_iatec
+# Teste IATEC
 
-A new Flutter project.
+App para um teste do iatec.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Este projeto foi feito usando o padrão de arquitetura limpa proposto pelo resocoder
 
-A few resources to get you started if this is your first Flutter project:
+Qualquer dúvida entrar em contato
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+rodriguesjeff.dev@gmail.com
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Architecture
+
+Cada feature é subdividida em 3 camadas, apresentação, domínio e dados.
+
+### Domain
+A camada de domínio é o core da aplicação, é onde fica a lógica de negócios e os casos de uso do app.
+
+### Data
+A camada de dados contém a conexão com data sources, seja para recuperação de dados locais ou remotos, também é onde implementamos os repositórios e modelos com base nos repositórios e entidades abstratos da camada de domínio.
+
+### Presentation
+A camada de apresentação é onde implementamos a ui que será exibida ao usuário, também é onde fazemos toda gestão de estado da tela seja com o cubit, bloc, mobx, etc.
+
